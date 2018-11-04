@@ -1,0 +1,43 @@
+<form #form="ngForm" (ngSubmit)="onSubmit(form)">
+	<div id="wrapper">
+		<mat-card class="example-card form" [ngClass]="{'stage': stage1}">
+	    	<mat-form-field>
+		    	<input matInput placeholder="Username (email)" type="email" name="username" ngModel required [readonly]="stage1">
+		    </mat-form-field>
+		    <mat-form-field>
+		        <input matInput placeholder="Password" type="password" name="password" ngModel required [readonly]="stage1">
+		    </mat-form-field>
+		    <mat-form-field>
+		        <input matInput placeholder="Confirm password" type="password" name="confirmed_password" ngModel required [readonly]="stage1">
+		    </mat-form-field>
+				<span *ngIf="passwordConfirm">The passwords don't match</span>
+				<span *ngIf="emailValidation">Email is invalid</span>
+				<span *ngIf="emailExists">Email already exists</span>
+		    <mat-card-actions id="next_btn">
+		        <button mat-raised-button type="button" [disabled]="stage1" (click)="next(form)">Next<i class="material-icons">keyboard_arrow_right</i></button>
+		    </mat-card-actions>
+		</mat-card>
+		<mat-card class="example-card form">
+ 	    	<mat-form-field >
+  				<mat-select placeholder="Choose City" required [disabled]="stage2" name="city" ngModel>
+    				<mat-option *ngFor="let city of cities" [value]="city" required>
+      			{{city}}
+      				</mat-option>
+ 	  			</mat-select>
+			</mat-form-field>
+		    <mat-form-field>
+		        <input matInput placeholder="Street" name="street" ngModel required [disabled]="stage2">
+		    </mat-form-field>
+		    <mat-form-field>
+		        <input matInput placeholder="Name" name="name" ngModel required [disabled]="stage2">
+		    </mat-form-field>
+		    <mat-form-field>
+		        <input matInput placeholder="Last Name" name="last_name" ngModel required [disabled]="stage2">
+		    </mat-form-field>
+		    <mat-card-actions id="step_two_btns">
+		      	<button mat-raised-button [disabled]="stage2" type="button" (click)="toggleStages()"><i class="material-icons">keyboard_arrow_left</i>Previous</button>
+		        <button mat-raised-button type="submit" [disabled]="stage2">Submit</button>
+		    </mat-card-actions>
+  		</mat-card>
+	</div>
+</form>

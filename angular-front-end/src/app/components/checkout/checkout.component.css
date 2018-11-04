@@ -1,0 +1,152 @@
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+	width: 100%;
+		margin-top: 4.5rem;
+}
+
+app-cart {
+	margin: 1rem;
+	width: 40%;
+}
+
+.checkoutForm {
+	margin: 1rem;
+	width: 40%;
+}
+
+
+form {
+	position: relative;
+	display: flex;
+	box-sizing: border-box;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+
+.mat-order {
+	background-color: #565151;
+	color: white;
+	font-size: 1.1rem;
+}
+
+hr {
+	border: 0;
+	display:block;
+	width: 80%;
+	background-color:#fa9302;
+	height: 1px;
+	margin-bottom: 1.2rem;
+}
+
+.credit_field, .date_field {
+	margin-bottom: 1.5rem;
+}
+
+.date_field {
+	width: 180px
+}
+
+#contain-form {
+	display: flex;
+	justify-content: center;
+}
+
+.headline {
+	font-weight: 700;
+}
+
+.errorMsg {
+	color: red;
+	position: absolute;
+	bottom: 50px;
+	animation: topToBottom .4s;
+	font-size: 85%;
+}
+
+@keyframes topToBottom {
+	0% {
+		bottom: 30px;
+	}
+
+	100% {
+		bottom: 50px;
+	}
+}
+
+@media screen and(max-width: 747px) {
+	mat-card {
+		width: 100%;
+	}
+}
+
+
+.popup_container {
+    position: fixed;
+    left: 0;
+    bottom:0;
+    right:0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    -ms-align-items: center;
+    align-items: center;
+    margin-top: 15%;
+    z-index: 1000;
+	background-color: rgba(0,0,0,.63);
+}
+
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+#main-page-btn {
+	border-radius: 9999px;
+	border: none;
+	padding: 6px 10px;
+	outline: none;
+	cursor: pointer;
+	color: white;
+	font-family: 'Lora', serif;
+	font-size: 1rem;
+	background-color: #087c86;
+	font-weight: 500;
+}
+
+.text_container {
+	position: relative;
+	background-color: white;
+	text-align: center;
+	width: 250px;
+	box-shadow: 0 11px 15px -7px rgba(0,0,0,.2), 0 24px 38px 3px rgba(0,0,0,.14), 0 9px 46px 8px rgba(0,0,0,.12);
+	display: block;
+  padding: 1.5rem;
+  border-radius: 2px;
+  box-sizing: border-box;
+  overflow: auto;
+  max-height: 100%;
+}
+
+.dateErrorMsg {
+	color: red;
+	position: absolute;
+	top: 40px;
+	right: 0;
+	animation: topToBottomDate .4s;
+	font-size: 85%;
+	width: 100%;
+}
+@keyframes topToBottomDate {
+	0% {
+		bottom: 30px;
+	}
+
+	100% {
+		top: 40px;
+	}
+}

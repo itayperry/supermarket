@@ -1,0 +1,25 @@
+<div class="img-container" [style.backgroundImage]="'url('+ product.imageUrl +')'">
+</div>
+<div>
+	<span class="product_name">{{ product.name }}</span>
+</div>
+<div>
+	<p class="product_price">₪ {{ product.price }}</p>
+</div>
+<div class="btns" *ngIf="!this.loginService.isManager">
+	<button
+		*ngIf="!this.isProductInCart"
+		(click)="changeProdStatus()"
+		class="first_time_click"
+	>Add to cart <img src="assets/images/cart_small.png" alt="cart">
+	</button>
+	<div *ngIf="this.isProductInCart" class="choose_number_purchase">
+		<button class="decrease_one" (click)="substract($event)" >-</button>
+		<input type="number" class="number_of_units" max="5" value="1" min="1" step="1" (input)="onChange($event.target.value)" [attr.data-productId]="product['_id']">
+		<button class="increase_one" (click)="add($event)" >+</button>
+	</div>
+</div>
+<div *ngIf="this.loginService.isManager">
+	<button class="edit_btn" (click)="showEditForm()">Edit</button>
+</div>
+

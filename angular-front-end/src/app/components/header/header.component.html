@@ -1,0 +1,11 @@
+<header>
+	<div id="logo">
+		<img id="side_logo" src="assets/images/logo.png" alt="logo" width="50">
+		<h3>Superb-Market</h3>
+	</div>
+	<div id="login-info">
+		<h3>Hello {{this.loginService.username}}</h3>
+		<button *ngIf="this.loginService.isLoggedIn" (click)="logout()">Logout</button>
+	</div>
+
+</header>

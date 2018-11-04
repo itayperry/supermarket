@@ -1,0 +1,29 @@
+
+	<mat-card>
+		<button id="back-btn" *ngIf="this.ordersService.checkoutPage" mat-raised-button (click)="backToShopping()">Back To Shopping</button>
+		<span id="title" *ngIf="!this.ordersService.checkoutPage">My Cart</span>
+		<div class="scrollbar scroll-style">
+			<div class="cart_container" *ngIf="this.ordersService.cart">
+				<section *ngFor="let product of this.ordersService.cart.items; index as i">
+					<div class="product_data">
+						<span class="produt_quantity">{{product.quantity}}</span>
+						<div class="img-container" [style.backgroundImage]="'url('+ product.productInfo.imageUrl +')'"></div>
+						<span class="produt_name">{{product.productInfo.name}}</span>
+						<span class="units_price">₪ {{product.generalPrice}}</span>
+						<i *ngIf="!this.ordersService.checkoutPage" class="material-icons delete_product" (click)="ordersService.removeProduct(i)">close</i>
+					</div>
+				</section>
+			</div>
+		</div>
+		<button (click)="toCheckout()" *ngIf="!this.ordersService.checkoutPage">Checkout:
+			<span *ngIf="this.ordersService.cart">
+				₪{{ this.ordersService.cart.order.subtotal }}
+			</span>
+			<span *ngIf="!this.ordersService.cart">
+				₪0.00
+			</span>
+		</button>
+		<div *ngIf="this.ordersService.checkoutPage">
+			<p *ngIf="this.ordersService.cart" id="checkout-total">Total: ₪{{ this.ordersService.cart.order.subtotal }}</p>
+		</div>
+	</mat-card>

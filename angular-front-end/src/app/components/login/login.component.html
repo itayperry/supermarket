@@ -1,0 +1,54 @@
+<div id="wrapper">
+  <mat-card class="example-card contain_form">
+    <div *ngIf="this.loginService.isLoggedIn">
+        <p>Hello {{this.loginService.userName}}</p>
+        <button mat-raised-button routerLink="/shopping" *ngIf="!this.loginService.isManager">Go Shopping</button>
+        <button mat-raised-button routerLink="/admin-control" *ngIf="this.loginService.isManager">Manage Products</button>
+    </div>
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)" novalidate *ngIf="!this.loginService.isLoggedIn">
+      <mat-form-field>
+        <input matInput placeholder="Username" name="username" ngModel required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Password" name="password" ngModel required type="password">
+      </mat-form-field>
+      <span *ngIf="loginValidate">Email or password are incorrect</span>
+      <mat-card-actions>
+        <button mat-raised-button type="submit">Login</button>
+        <button mat-raised-button routerLink="/sign-up">Sign Up</button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+  <!-- Description -->
+  <mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>
+      <h2>6 Reasons Why You Should Buy From Us</h2>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <ol>
+      <li>Customer friendly e-commerce website to securely purchase products online.</li>
+      <li>Customers save time and money buying from product-pirate-market-site online</li>
+      <li>product-pirate-market-site provides exceptional and extraordinary customer service with attention to detail.</li>
+      <li>All products are imported designer products.</li>
+      <li>Free delivery* to your doorstep by courier.</li>
+      <li>Online parcel tracking available.</li>
+    </ol>
+    <footer>
+      <small>* Free delivery on selected products</small>
+    </footer>
+  </mat-card-content>
+  </mat-card>
+  <!-- products -->
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title><h2>Superb-Market</h2></mat-card-title>
+    </mat-card-header>
+    <img id="side_logo" src="assets/images/logo.png" alt="logo" width="100">
+    <mat-card-content style="margin-top: 1rem">
+      <p>Available products in our store: <span>{{this.productsService.prodsInStore}}</span></p>
+      <p>Number of confirmed orders submitted in our store: <span>{{this.ordersService.ordersInStore}}</span></p>
+    </mat-card-content>
+  </mat-card>
+</div>

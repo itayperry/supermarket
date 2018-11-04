@@ -1,0 +1,22 @@
+<div class="search_container">
+	<div class="inner_search">
+		<input type="search" placeholder="Search in category" (input)="onInputSearch($event.target.value)" id="search">
+		<i class="material-icons search_icon">search</i>
+	</div>
+</div>
+<!-- <div id="contain-add-new" *ngIf="this.loginService.isManager">
+	<button id="add-new-btn">Add a new product</button>
+</div> *ngIf="!this.loginService.isManager"-->
+<mat-card>
+  <div class="categoryBtns">
+    <div class="allBtn">
+      <button (click)="sortByCategory($event)" class="allProductsBtn">All Products</button>
+      <button *ngFor="let category of categoriesInfo" class="categoryButtons" (click)="sortByCategory($event)">{{category.name}}</button>
+    </div>
+  </div>
+  	<mat-card>
+		<div id="products-container">
+			<app-product *ngFor="let product of this.productsService.products" [product]="product"></app-product>
+		</div>
+	</mat-card>	
+</mat-card>

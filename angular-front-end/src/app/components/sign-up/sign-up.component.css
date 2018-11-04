@@ -1,0 +1,43 @@
+form {
+	margin-top: 4.5rem;
+}
+
+mat-card-actions {
+	display: flex;
+	justify-content: space-around;
+	-ms-align-items: center;
+	align-items: center;
+}
+
+mat-card {
+	width: 45vw;
+}
+
+mat-form-field {
+	display: block;
+}
+
+#wrapper {
+	flex-wrap: wrap;
+	margin-top: 1rem;
+	display: flex;
+	justify-content: space-around;
+}
+
+#next_btn {
+	padding-top: 2rem;
+}
+
+#step_two_btns {
+	padding-top: 1rem;
+}
+
+span {
+	color: red;
+	display: block;
+	text-align: center;
+}
+
+.stage {
+	opacity: 0.6;
+}

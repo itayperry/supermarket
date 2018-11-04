@@ -1,0 +1,14 @@
+#container {
+	display: flex;
+	margin-top: 4.5rem;
+}
+
+app-cart {
+	width: 420px;
+	text-align: center;
+}
+
+app-product-list {
+	width: calc(100% - 420px);
+	border: 1px solid #0000001c;
+}

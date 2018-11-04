@@ -1,0 +1,51 @@
+<div class="container">
+	<app-cart></app-cart>
+
+	<div class="checkoutForm">
+		<mat-card>
+			<h2>Order</h2>
+			<div id="contain-form">
+			    <form #form="ngForm" (ngSubmit)="onSubmit(form)" *ngIf="this.loginService.user">
+			    	<span class="headline">Shipping Details</span>
+			    	<hr>
+			    	<mat-form-field class="example-full-width">
+			        	<input matInput name="city" ngModel="{{this.loginService.user.city}}" placeholder="city" required>
+			        	<mat-error>
+			        		Please enter a value
+			        	</mat-error>
+				  	</mat-form-field>
+			    	<mat-form-field class="example-full-width">
+			        	<input matInput name="street" ngModel="{{this.loginService.user.street}}" placeholder="street" required>
+			        	<mat-error>
+			        		Please enter a value
+			        	</mat-error>
+				  	</mat-form-field>
+				  	<mat-form-field color="accent" class="date_field">
+	  					<input matInput [matDatepicker]="picker" [min]="minDate" placeholder="Choose order date" name="date" ngModel required>
+	  					<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+	  					<mat-datepicker #picker></mat-datepicker>
+							<span *ngIf="validShippmentDate" class="dateErrorMsg">No avaliable shippments for this day</span>
+					</mat-form-field>
+					<span class="headline">Payment</span>
+			    	<hr>
+			    	<mat-form-field class="example-full-width credit_field">
+			        	<input type="number" matInput name="creditCard" ngModel placeholder="Credit Card Number" required>
+				  	</mat-form-field>
+				  	<span class="errorMsg" *ngIf="creditCardValidation">Number is invalid</span>
+			  		<div>
+			        	<button mat-raised-button [color]="'order'">Order</button>
+			  		</div>
+			    </form>
+			</div>
+		</mat-card>
+	</div>
+</div>
+
+<div class="popup_container" *ngIf="purchaseCompleted">
+	<div class="text_container">
+		<div>
+			<h2>Thank you for purchasing at Superb-Market!</h2>
+			<button (click)="toMainPage()" id="main-page-btn">Back to main page</button>
+		</div>
+	</div>
+</div>

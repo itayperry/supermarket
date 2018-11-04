@@ -1,0 +1,34 @@
+<div class="popup_container" (click)="modalClick($event)">
+	<div class="contain_form">
+		<div (click)="closePop()">
+			<i class="material-icons close_popup">close</i>	
+		</div>
+		<form #form="ngForm" (ngSubmit)="onSubmit(form)" *ngIf="product">
+			<!-- why *ngIf="product" - it takes time for the book to be created and the console throws errors that are in fact irrelevant -->
+			<div class="img_container">
+				<img src="{{ product.imageUrl }}" alt="" height="144px" (error)="defaultImage($event)" class="image">
+			</div>
+      		<mat-form-field>
+<!-- 		  		<span class="name_input">Name:</span> -->
+		    	<input matInput placeholder="Name" type="text" name="name" ngModel="{{ product.name }}" required>
+      		</mat-form-field>
+      		<mat-form-field>
+		    	<input matInput placeholder="Image URL:" type="text" name="imageUrl" ngModel="{{ product.imageUrl }}" (input)="updateImage($event)">
+      		</mat-form-field>
+      		<mat-form-field>
+		    	<input matInput placeholder="Price (ILS):" type="number" name="price" ngModel="{{ product.price }}">
+	      		<span *ngIf="validPrice" class="priceErrorMsg">Price must be a positive number</span>
+      		</mat-form-field>
+			<mat-form-field >
+  				<mat-select placeholder="Choose Category" required name="categoryId" [ngModel]="product.categoryId">
+    				<mat-option *ngFor="let category of categoriesInfo" [value]="category._id" >
+      					{{category.name}}
+      				</mat-option>
+ 	  			</mat-select>
+			</mat-form-field>
+		    <div>
+		    	<button type="submit">Edit</button>
+		  	</div>
+		</form>
+	</div>
+</div>

@@ -1,0 +1,45 @@
+header {
+	position: fixed;
+    top: 0;
+    z-index: 2;
+    left: 0;
+    right: 0;
+	color: white;
+	padding: 0.4rem 1rem;
+	display: flex;
+	justify-content: space-between;
+	-ms-align-items: center;
+	align-items: center;
+	background-color: #c31c1c;
+	font-family: 'Lora', serif;
+	box-shadow: -20px -15px 20px 18px #444138;
+	margin-bottom: 1rem;
+}
+h3 {
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+	margin-right: 0.5rem;
+}
+
+#logo {
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: center;
+}
+button {
+	font-family: 'Lora', serif;
+	outline: none;
+	border-radius: 5px;
+	border: none;
+	padding: 6px 10px;
+	background-color: #ffeece;
+	color: black;
+	font-size: 0.9rem;
+	cursor: pointer;
+}
+#login-info {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

@@ -1,0 +1,82 @@
+.img-container {
+	width: 100%;
+	text-align: center;
+	height: 8rem;
+	background-position:center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	margin-bottom: 1rem;
+}
+
+.product_name {
+	font-weight: bold;
+}
+
+.product_price {
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+
+.btns {
+	height: 2.313rem;
+}
+.first_time_click {
+	width: 10.625rem;
+	border-radius: 5%;
+	padding: 0.4rem 0.5rem;
+	background-color: #0e4a4e;
+	border: none;
+	color: white;
+	font-size: 1.2rem;
+	cursor: pointer;
+	outline: none;
+	height: 100%;
+}
+.decrease_one, .increase_one {
+	padding: 0.4rem 0.5rem;
+	background-color: #0e4a4e;
+	cursor: pointer;
+	outline: none;
+	border: none;
+	color: white;
+	width: 32%;
+	border-radius: 5%;
+	font-size: 1.2rem;
+}
+
+.choose_number_purchase {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 10.625rem;
+	background-color: #0e4a4e;
+	border-radius: 5%;
+	height: 100%;
+}
+
+.number_of_units {
+	width: 36%;
+	box-sizing: border-box;
+	border:none;
+	border-radius: 5%;
+	height: 85%;
+	text-align: center;
+	outline: none;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.edit_btn {
+    border-radius: 9999px;
+	border: none;
+	padding: 6px 10px;
+	outline: none;
+	cursor: pointer;
+	color: white;
+	font-family: 'Lora', serif;
+	font-size: 1rem;
+	background-color: #087c86;
+	font-weight: 500;
+}
