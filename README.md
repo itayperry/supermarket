@@ -1,5 +1,8 @@
 # supermarket
-MEAN Stack project - login details - one of the admins: Username: omri@gmail.com, Passworsd: omri123
+MEAN Stack project - login details - 
+
+one of the admins: Username: omri@gmail.com, Passworsd: omri123
+
 one of the users: timothy@gmail.com, Password: timothy123
 ## Order
 
