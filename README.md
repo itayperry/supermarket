@@ -3,7 +3,7 @@ MEAN Stack project - login details:
 
 Admin example: omri@gmail.com, Passworsd: omri123
 
-Rando user example: timothy@gmail.com, Password: timothy123
+Random user example: timothy@gmail.com, Password: timothy123
 ## Order
 
 ![order](https://user-images.githubusercontent.com/37377389/48843035-a0038100-ed9e-11e8-8cfa-6dab5dac44d3.PNG)
