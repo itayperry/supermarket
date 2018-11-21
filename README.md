@@ -1,9 +1,9 @@
 # supermarket
-MEAN Stack project - login details - 
+MEAN Stack project - login details:
 
-one of the admins: Username: omri@gmail.com, Passworsd: omri123
+Admin example: omri@gmail.com, Passworsd: omri123
 
-one of the users: timothy@gmail.com, Password: timothy123
+Rando user example: timothy@gmail.com, Password: timothy123
 ## Order
 
 ![order](https://user-images.githubusercontent.com/37377389/48843035-a0038100-ed9e-11e8-8cfa-6dab5dac44d3.PNG)
